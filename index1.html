@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Aparna</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(-45deg,#ff4d6d,#ff85a1,#ffc2d1,#a2d2ff);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    text-align:center;
+    position:relative;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    color:white;
+    font-size:clamp(2.5rem,8vw,6rem);
+    font-weight:900;
+    text-shadow:0 0 10px #fff,
+                0 0 20px #ff0080,
+                0 0 40px #ff0080;
+    animation:pulse 1.5s infinite;
+    z-index:10;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.05);}
+}
+
+.balloon{
+    position:absolute;
+    width:60px;
+    height:80px;
+    border-radius:50%;
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(120vh);}
+    to{transform:translateY(-120vh);}
+}
+
+.cake{
+    margin-top:30px;
+    z-index:10;
+}
+
+.candles{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:5px;
+}
+
+.candle{
+    width:10px;
+    height:50px;
+    background:white;
+    position:relative;
+    border-radius:3px;
+}
+
+.flame{
+    position:absolute;
+    top:-18px;
+    left:-2px;
+    width:14px;
+    height:18px;
+    background:gold;
+    border-radius:50% 50% 50% 50%;
+    box-shadow:0 0 15px orange;
+    animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+    from{transform:scale(1);}
+    to{transform:scale(1.2);}
+}
+
+.layer{
+    width:250px;
+    height:90px;
+    background:#ff5d8f;
+    border-radius:15px;
+    position:relative;
+}
+
+.layer:before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:0;
+    width:250px;
+    height:20px;
+    background:white;
+    border-radius:10px;
+}
+
+.btn{
+    margin-top:40px;
+    text-decoration:none;
+    background:#e1306c;
+    color:white;
+    font-size:1.2rem;
+    font-weight:bold;
+    padding:16px 40px;
+    border-radius:50px;
+    box-shadow:0 0 20px #e1306c;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+}
+
+.note{
+    margin-top:12px;
+    color:white;
+    font-size:.9rem;
+}
+</style>
+</head>
+<body>
+
+<h1>🎉 HAPPY BIRTHDAY APARNA 🎉</h1>
+
+<div class="cake">
+    <div class="candles">
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+    </div>
+    <div class="layer"></div>
+</div>
+
+<a href="surprise.html" class="btn">🎁 SURPRISE</a>
+
+<div class="note">🎵 Happy Birthday Music Playing...</div>
+
+<!-- Replace music.mp3 with your birthday tune -->
+<audio id="music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+for(let i=0;i<18;i++){
+    let b=document.createElement("div");
+    b.classList.add("balloon");
+    b.style.left=Math.random()*100+"vw";
+    b.style.background=`hsl(${Math.random()*360},90%,70%)`;
+    b.style.animationDuration=(6+Math.random()*4)+"s";
+    document.body.appendChild(b);
+}
+
+</script>
+
+<button id="playMusic" class="btn">
+🎵 Tap to Start Birthday Music
+</button>
+
+<script>
+const music=document.getElementById("music");
+
+document.getElementById("playMusic")
+.addEventListener("click",()=>{
+   music.play();
+});
+</script>
+
+</body>
+</html>
