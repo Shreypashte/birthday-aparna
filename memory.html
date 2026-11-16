@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Beautiful Memories ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+@keyframes gradient{
+   0%{background-position:0% 50%;}
+   50%{background-position:100% 50%;}
+   100%{background-position:0% 50%;}
+}
+
+.container{
+    text-align:center;
+    width:90%;
+    max-width:900px;
+}
+
+.audio-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:#ffffff;
+    color:#ff4b91;
+    border:none;
+    padding:12px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+.audio-btn:hover{
+    transform:scale(1.05);
+}
+
+.message{
+    font-size:1.3rem;
+    line-height:1.8;
+    margin-bottom:30px;
+    background:rgba(255,255,255,0.12);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+.slideshow{
+    position:relative;
+    width:300px;
+    height:400px;
+    margin:20px auto;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+    animation:movieShow 16s infinite;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:4s;}
+.slide:nth-child(3){animation-delay:8s;}
+.slide:nth-child(4){animation-delay:12s;}
+
+@keyframes movieShow{
+    0%{
+        opacity:0;
+        transform:scale(.8);
+    }
+    10%{
+        opacity:1;
+        transform:scale(1);
+    }
+    25%{
+        opacity:1;
+    }
+    35%{
+        opacity:0;
+        transform:scale(1.1);
+    }
+    100%{
+        opacity:0;
+    }
+}
+
+.memory-btn{
+    margin-top:35px;
+    background:#ff4b91;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(255,75,145,.5);
+}
+
+.memory-btn:hover{
+    transform:scale(1.08);
+}
+
+.hearts span{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<button class="audio-btn" onclick="playVoice()">
+🔊 Hear This
+</button>
+
+<audio id="voice">
+    <source src="shreya-voice.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<div class="message">
+Aparna,
+
+Some people enter our lives and quietly become a part of every happy memory.
+Thank you for every laugh, every late-night conversation, every dramatic moment,
+and every memory that turned ordinary days into unforgettable stories.
+
+No matter where life takes us, these memories will always remain special.
+You are truly one of my favorite chapters. ❤️
+</div>
+
+<div class="slideshow">
+
+<div class="slide">
+<img src="photo1.jpg">
+</div>
+
+<div class="slide">
+<img src="photo2.jpg">
+</div>
+
+<div class="slide">
+<img src="photo3.jpg">
+</div>
+
+<div class="slide">
+<img src="photo4.jpg">
+</div>
+
+</div>
+
+<button class="memory-btn"
+onclick="window.location.href='our-memory.html'">
+💕 OUR MEMORY 💕
+</button>
+
+</div>
+
+<div class="hearts">
+<span style="left:10%;animation-delay:1s;">❤️</span>
+<span style="left:25%;animation-delay:2s;">✨</span>
+<span style="left:45%;animation-delay:3s;">❤️</span>
+<span style="left:65%;animation-delay:4s;">✨</span>
+<span style="left:85%;animation-delay:5s;">❤️</span>
+</div>
+
+<script>
+function playVoice(){
+    document.getElementById("voice").play();
+}
+</script>
+
+</body>
+</html>
