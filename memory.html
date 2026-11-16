@@ -18,11 +18,12 @@ body{
     background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
     background-size:400% 400%;
     animation:gradient 12s ease infinite;
-    overflow:hidden;
+    overflow-y:auto;
     display:flex;
     justify-content:center;
     align-items:center;
     color:white;
+    padding:20px 10px;
 }
 
 @keyframes gradient{
@@ -39,15 +40,15 @@ body{
 
 .audio-btn{
     position:absolute;
-    top:20px;
-    right:20px;
+    top:10px;
+    right:10px;
     background:#ffffff;
     color:#ff4b91;
     border:none;
-    padding:12px 20px;
+    padding:10px 15px;
     border-radius:30px;
     cursor:pointer;
-    font-size:16px;
+    font-size:14px;
     font-weight:bold;
     box-shadow:0 0 15px rgba(0,0,0,.2);
 }
@@ -57,19 +58,22 @@ body{
 }
 
 .message{
-    font-size:1.3rem;
-    line-height:1.8;
-    margin-bottom:30px;
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:20px;
     background:rgba(255,255,255,0.12);
-    padding:25px;
+    padding:18px;
     border-radius:20px;
     backdrop-filter:blur(10px);
 }
 
 .slideshow{
     position:relative;
-    width:300px;
-    height:400px;
+    width:90vw;
+    max-width:350px;
+    height:60vh;
+    max-height:500px;
+    min-height:350px;
     margin:20px auto;
 }
 
@@ -117,13 +121,15 @@ body{
 }
 
 .memory-btn{
-    margin-top:35px;
+   margin-top:20px;
     background:#ff4b91;
     color:white;
     border:none;
-    padding:15px 35px;
+    width:90%;
+    max-width:300px;
+    padding:14px;
     border-radius:40px;
-    font-size:18px;
+    font-size:16px;
     cursor:pointer;
     font-weight:bold;
     box-shadow:0 0 20px rgba(255,75,145,.5);
@@ -197,7 +203,7 @@ You are truly one of my favorite chapters. ❤️
 </div>
 
 <button class="memory-btn"
-onclick="window.location.href='our-memory.html'">
+onclick="window.location.href='memory.html'">
 💕 OUR MEMORY 💕
 </button>
 
